@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Building Image') {
             steps {
-                sh 'docker build -t 4TWIN1-G2-ProjetFinal:1.0 .';
+                sh 'docker build -t MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 .';
             }
         }
         stage('Push to DockerHub') {
@@ -37,10 +37,10 @@ pipeline {
             sh 'docker login -u meryemmriri -p mimomimi99'
 
             // Tag the Docker image with the desired repository and version
-            sh 'docker tag 4TWIN1-G2-ProjetFinal:1.0 meryemmriri/4TWIN1-G2-ProjetFinal:1.0'
+            sh 'docker tag MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 meryemmriri/MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0'
 
             // Push the Docker image to DockerHub
-            sh 'docker push meryemmriri/4TWIN1-G2-ProjetFinals:1.0'
+            sh 'docker push meryemmriri/MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0'
         }
             }
         }
