@@ -11,7 +11,7 @@
     <groupId>tn.esprit</groupId>
     <artifactId>4TWIN1-G2-ProjetFinal</artifactId>
     <version>1.0</version>
-    <name>DevOps_Project</name>
+    <name>4TWIN1-G2-ProjetFinal</name>
     <description>DevOps_Project</description>
     <properties>
         <java.version>11</java.version>
@@ -41,6 +41,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        	<distributionManagement>
+		<repository>
+			<id>deploymentRepo</id>
+			<name>Nexus Repository</name>
+			<url>http://localhost:8081/repository/maven-releases/</url>
+		</repository>
+	</distributionManagement>
+
         <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui -->
         <dependency>
             <groupId>org.springdoc</groupId>
