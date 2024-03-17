@@ -5,6 +5,13 @@ pipeline{
 
 
   stages {
+stage('GIT') {
+            steps {
+                echo 'Pulling code from git . . .'
+                git branch :"MeriemMRIRI-4TWIN1-G2",
+                url:"https://github.com/MeryemMriri/4TWIN1-G2-ProjetFinal.git"
+            }
+        }
 
   stage('maven clean') {
               steps {
