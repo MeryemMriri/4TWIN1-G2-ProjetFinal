@@ -24,12 +24,12 @@ pipeline {
             steps {
                 sh 'mvn deploy';
             }
-        }*/
+        }
         stage('Building Image') {
             steps {
                 sh 'docker build -t meriemmriri-4twin1-g2-projetfinal:1.0 .';
             }
-        }
+        }*/
         stage('Push to DockerHub') {
             steps {
                script {
@@ -37,10 +37,10 @@ pipeline {
             sh 'docker login -u meryemmriri -p mimomimi99'
 
             // Tag the Docker image with the desired repository and version
-            sh 'docker tag MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 meryemmriri/MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0'
+            sh 'docker tag MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
 
             // Push the Docker image to DockerHub
-            sh 'docker push meryemmriri/MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0'
+            sh 'docker push meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
         }
             }
         }
