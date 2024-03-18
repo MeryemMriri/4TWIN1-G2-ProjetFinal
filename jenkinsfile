@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         
-         stage('maven clean') {
+        /*  stage('maven clean') {
             steps {
                 sh 'mvn clean'
              
@@ -15,7 +15,7 @@ pipeline {
              
             }
         }
-       /*  stage('MVN SONARQUBE') {
+        stage('MVN SONARQUBE') {
             steps {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=mimomimi99 -Dmaven.test.skip=true';
             }
