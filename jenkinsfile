@@ -29,7 +29,7 @@ pipeline {
             steps {
                 sh 'docker build -t meriemmriri-4twin1-g2-projetfinal:1.0 .';
             }
-        }*/
+        }
         stage('Push to DockerHub') {
             steps {
                script {
@@ -43,7 +43,7 @@ pipeline {
             sh 'docker push meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
         }
             }
-        }
+        }*/
         stage('Run Docker Compose') {
             steps {
                 script {
