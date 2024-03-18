@@ -37,7 +37,7 @@ pipeline {
             sh 'docker login -u meryemmriri -p mimomimi99'
 
             // Tag the Docker image with the desired repository and version
-            sh 'docker tag MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
+            sh 'docker tag meriemmriri-4twin1-g2-projetfinal:1.0 meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
 
             // Push the Docker image to DockerHub
             sh 'docker push meryemmriri/meriemmriri-4twin1-g2-projetfinal:1.0'
