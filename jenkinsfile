@@ -20,14 +20,14 @@ pipeline {
                 sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=mimomimi99 -Dmaven.test.skip=true';
             }
         }
-        stage('NEXUS') {
+      /*  stage('NEXUS') {
             steps {
                 sh 'mvn deploy';
             }
-        }
+        }*/
         stage('Building Image') {
             steps {
-                sh 'docker build -t MeriemMRIRI-4TWIN1-G2-ProjetFinal:1.0 .';
+                sh 'docker build -t meriemmriri-4twin1-g2-projetfinal:1.0 .';
             }
         }
         stage('Push to DockerHub') {
