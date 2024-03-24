@@ -6,27 +6,21 @@ pipeline{
 
   stages {
 
-  stage('intall depencies') {
+  stage('clean') {
               steps {
-                  script{
-                    sh ('mvn install')
-                  }
+                    sh ('mvn clean')
               }
           }
 
-  stage('Unit Test') {
+  stage('Test') {
               steps {
-                  script{
                     sh ('mvn test')
-                  }
               }
           }
   
   stage('compile') {
               steps {
-                  script{
                     sh ('mvn compile')
-                  }
               }
           }
 
