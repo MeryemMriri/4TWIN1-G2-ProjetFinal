@@ -1,12 +1,6 @@
 pipeline {
     agent any
 
-
-    environment {
-        M2_HOME = "/opt/apache-maven-3.6.3"
-        PATH = "${M2_HOME}/bin:${env.PATH}"
-    }
-
     stages {
         stage('Clean') {
             steps {
@@ -31,7 +25,7 @@ pipeline {
                 script {
                     def mvnHome = tool 'M2_HOME'
                     withSonarQubeEnv('SonarQube_Server') {
-                        sh "/${M2_HOME}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName='Youssef-GHARRAD-4TWIN1-G2'"
+                        sh "/${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName='Youssef-GHARRAD-4TWIN1-G2'"
                     }
                 }
             }
