@@ -52,7 +52,7 @@ pipeline {
 
         stage('MVN NEXUS') {
             steps {
-                withMaven(maven: 'mavenTool') {
+                withMaven(maven: mavenTool) {
                     sh 'mvn deploy'
                 }
             }
