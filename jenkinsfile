@@ -3,6 +3,8 @@ pipeline {
     environment {
         // Define the SonarQube scanner tool
         scannerTool = 'SonarQube_Server'
+        // Define the Maven tool
+        mavenTool = 'M2_HOME'
     }
     stages {
         stage('GIT') {
@@ -45,6 +47,14 @@ pipeline {
         stage('Test with Mockito') {
             steps {
                 sh 'mvn test'
+            }
+        }
+
+        stage('MVN NEXUS') {
+            steps {
+                withMaven(maven: 'mavenTool') {
+                    sh 'mvn deploy'
+                }
             }
         }
 
