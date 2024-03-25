@@ -5,10 +5,11 @@ pipeline {
         stage('GIT') {
             steps {
                 echo 'Pulling code from git . . .'
-                git branch :"Youssef-GHARRAD-4TWIN1-G2",
-                url:"https://github.com/MeryemMriri/4TWIN1-G2-ProjetFinal.git"
+                git branch: 'Youssef-GHARRAD-4TWIN1-G2',
+                    url: 'https://github.com/MeryemMriri/4TWIN1-G2-ProjetFinal.git'
             }
         }
+
         stage('Clean') {
             steps {
                 sh 'mvn clean'
