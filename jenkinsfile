@@ -55,7 +55,8 @@ pipeline {
         stage('MVN NEXUS') {
             steps {
                 withMaven(maven: mavenTool) {
-                    sh 'mvn deploy'
+                    //sh 'mvn deploy'
+                    sh 'mvn deploy -DupdateReleaseInfo=true'
                     //sh 'mvn deploy -DaltDeploymentRepository=deploymentRepo::default::http://192.168.33.10:8081/repository/maven-releases/'
                     //deploymentRepo == id in  -->  sudo cat  /usr/share/maven/conf/settings.xml
                 }
