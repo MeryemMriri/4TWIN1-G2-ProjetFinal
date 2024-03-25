@@ -43,7 +43,7 @@ pipeline {
                     }
 
                     // Execute the SonarQube analysis with Maven
-                    sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName='Youssef-GHARRAD-4TWIN1-G2'"
+                    sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName='Youssef-GHARRAD-4TWIN1-G2' -Dsonar.login=admin -Dsonar.password=123"
                 }
             }
         }
