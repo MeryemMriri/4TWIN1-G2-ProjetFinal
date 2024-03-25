@@ -18,6 +18,8 @@ pipeline {
         stage('Maven Build') {
             steps {
                 sh 'mvn clean install'
+                // Increment the version to the next snapshot version
+                sh 'mvn versions:set -DincrementSnapshot'
             }
         }
 
