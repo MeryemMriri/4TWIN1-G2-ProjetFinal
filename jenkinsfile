@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        // Define the SonarQube scanner tool
+        scannerTool = 'SonarQube_Server'
+    }
     stages {
         stage('GIT') {
             steps {
@@ -31,12 +34,16 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 script {
-                    def mvnHome = '/usr'
-                    withSonarQubeEnv('SonarQube_Server') {
-                        dir("${mvnHome}") {
-                            sh './bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName=Youssef-GHARRAD-4TWIN1-G2'
-                        }
+                    // Get the path to the Maven installation
+                    def mvnHome = tool scannerTool
+                    
+                    // Check if the tool exists
+                    if (mvnHome == null) {
+                        error "Default Maven tool not found"
                     }
+
+                    // Execute the SonarQube analysis with Maven
+                    sh "${mvnHome}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName='Youssef-GHARRAD-4TWIN1-G2'"
                 }
             }
         }
