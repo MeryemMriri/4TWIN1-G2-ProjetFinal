@@ -79,13 +79,14 @@
     <distributionManagement>
         <repository>
             <id>deploymentRepo</id> <!-- Repository ID for releases -->
-            <url>http://your-nexus-url/repository/maven-releases/</url>
+            <url>http://192.168.33.10:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>deploymentRepo</id> <!-- Repository ID for snapshots -->
-            <url>http://your-nexus-url/repository/maven-snapshots/</url>
+            <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
+
 
 
 
