@@ -33,14 +33,15 @@ pipeline {
                 script {
                     def mvnHome = '/usr/share/maven' // Specify the correct Maven installation directory
                     withSonarQubeEnv('SonarQube_Server') {
-                        dir("${mvnHome}/bin/mvn") {
+                        dir("${mvnHome}/bin") {
                             // Execute Maven command
-                            sh ' clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName=Youssef-GHARRAD-4TWIN1-G2'
+                            sh './mvn clean verify sonar:sonar -Dsonar.projectKey=Youssef-GHARRAD-4TWIN1-G2 -Dsonar.projectName=Youssef-GHARRAD-4TWIN1-G2'
                         }
                     }
                 }
             }
         }
+
 
     }
 }
