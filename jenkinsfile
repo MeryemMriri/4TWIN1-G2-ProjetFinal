@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     // Get the path to the Maven installation
-                    def mvnHome = tool scannerTool
+                    def mvnHome = tool 'M2_HOME'
                     
                     // Check if the tool exists
                     if (mvnHome == null) {
