@@ -78,11 +78,11 @@
 
     <distributionManagement>
         <repository>
-            <id>nexus</id> <!-- Replace 'nexus-releases' with your actual repository ID -->
+            <id>nexus-releases</id> <!-- Replace 'nexus-releases' with your actual repository ID -->
             <url>http://192.168.33.10:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus</id> <!-- Replace 'nexus-snapshots' with your actual repository ID -->
+            <id>nexus-snapshots</id> <!-- Replace 'nexus-snapshots' with your actual repository ID -->
             <url>http://192.168.33.10:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
